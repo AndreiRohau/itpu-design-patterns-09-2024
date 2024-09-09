@@ -1,2 +1,1 @@
 https://www.linkedin.com/learning/programming-foundations-design-patterns-2/challenge-the-strategy-pattern?autoSkip=true&resume=false&u=2113185
-https://www.linkedin.com/learning/advanced-design-patterns-design-principles/loose-coupling?autoSkip=true&resume=false&u=2113185

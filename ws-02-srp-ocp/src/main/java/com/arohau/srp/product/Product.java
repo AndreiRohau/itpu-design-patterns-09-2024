@@ -1,8 +1,5 @@
-package com.arohau.srp.correct;
+package com.arohau.srp.product;
 
-import lombok.Data;
-
-@Data
 public class Product {
     private final String title;
     private final Double price;
@@ -12,5 +9,8 @@ public class Product {
         this.title = title;
         this.price = price;
         this.taxRate = taxRate;
+    }
+    public Double calculateTax() {
+        return this.price * this.taxRate;
     }
 }

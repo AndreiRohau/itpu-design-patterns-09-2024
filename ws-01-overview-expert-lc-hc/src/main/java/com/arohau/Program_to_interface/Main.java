@@ -1,7 +1,7 @@
 package com.arohau.Program_to_interface;
 
 public class Main {
-    // PROBLEM: cannot use differrent languages spelling checkers
+    // PROBLEM: cannot use different languages spelling checkers
     public static void main(String[] args) {
         EnglishTextSpellingChecker englishTextSpellingChecker = new EnglishTextSpellingChecker();
         TextEditorService textEditorService = new TextEditorService(englishTextSpellingChecker);

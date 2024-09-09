@@ -15,7 +15,7 @@ public class Main {
     }
 
     // now processing does not care about whether we have new types functionality
-    private static void handleTypes(List<Type> list) {
+    public static void handleTypes(List<Type> list) {
         list.forEach(Type::handle);
     }
 }

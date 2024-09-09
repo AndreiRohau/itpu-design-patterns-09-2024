@@ -1,4 +1,4 @@
-package com.arohau.srp.correct;
+package com.arohau.srp.product.correct;
 
 public class TaxCalculator {
     public Double calculateTax(Product product) {

@@ -17,15 +17,27 @@ public class Main {
             String type = e.getClass().getSimpleName();
             switch (type) {
                 case "TypeA":
-                    System.out.println("Here is the logic to handle TypeA");
+                    executeTypeAFunc();
                     break;
                 case "TypeB":
-                    System.out.println("Here is the different logic to handle TypeB");
+                    executeTypeBFunc();
                     break;
                 default:
-                    System.out.println("unknown type" + type);
+                    executeUnknownFunc(type);
             }
         });
+    }
+
+    private static void executeTypeAFunc() {
+        System.out.println("Here is the logic to handle TypeA");
+    }
+
+    private static void executeTypeBFunc() {
+        System.out.println("Here is the different logic to handle TypeB");
+    }
+
+    private static void executeUnknownFunc(Object type) {
+        System.out.println("unknown type" + type);
     }
 
 }

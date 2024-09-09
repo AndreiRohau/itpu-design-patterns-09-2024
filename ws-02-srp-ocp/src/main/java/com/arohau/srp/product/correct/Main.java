@@ -1,4 +1,4 @@
-package com.arohau.srp.correct;
+package com.arohau.srp.product.correct;
 
 /**
  * Now Product class is responsible only for data storing and

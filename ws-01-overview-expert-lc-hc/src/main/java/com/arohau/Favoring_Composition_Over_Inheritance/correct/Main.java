@@ -6,7 +6,9 @@ public class Main {
      */
     public static void main(String[] args) {
         AbstractCreature pet = initRandomPet();
+
         System.out.println(pet.getClass().getSimpleName());
+
         BehaviourVoiceable behaviourVoiceable = pet.getBehaviourVoiceable();
         if (behaviourVoiceable != null) {
             behaviourVoiceable.produceVoice();
@@ -16,7 +18,7 @@ public class Main {
     }
 
     private static AbstractCreature initRandomPet() {
-        int animalsNumber = 5;
+        int animalsNumber = 6;
         double random = Math.random() * animalsNumber;
         int num = (int) random;
         AbstractCreature o = null;
@@ -26,6 +28,7 @@ public class Main {
             case 2 -> o = new Duck(new BehaviourVoiceableQuack());
             case 3 -> o = new Jellyfish();
             case 4 -> o = new WildCat(new BehaviourVoiceableMeow());
+            case 5 -> o = new Elephant(new BehaviourVoiceableHelloWorld());
         }
         return o;
     }

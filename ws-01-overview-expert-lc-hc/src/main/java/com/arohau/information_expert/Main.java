@@ -16,6 +16,7 @@ public class Main {
         Product makbook = new Product("makbook", "laptop", 3000.0);
 
         ShoppingCart shoppingCart = new ShoppingCart();
+
         shoppingCart.addProductToCart(iphone);
         shoppingCart.addProductToCart(ipad);
         shoppingCart.addProductToCart(makbook);

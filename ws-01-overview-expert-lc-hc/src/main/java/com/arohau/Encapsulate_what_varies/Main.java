@@ -12,7 +12,7 @@ public class Main {
     }
 
     private static Pet initRandomPet() {
-        int animalsNumber = 4;
+        int animalsNumber = 5;
         double random = Math.random() * animalsNumber;
         int num = (int) random;
         Pet o = null;
@@ -21,6 +21,7 @@ public class Main {
             case 1 -> o = new Dog();
             case 2 -> o = new Duck();
             case 3 -> o = new Raven();
+            case 4 -> o = new Elephant();
         }
         return o;
     }

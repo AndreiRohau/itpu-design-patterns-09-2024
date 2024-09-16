@@ -3,6 +3,6 @@ package lsp.bank.solution;
 import java.math.BigDecimal;
 
 public abstract class AbstractAccount {
-    protected abstract void deposit(BigDecimal amount);
+    protected abstract Number deposit(BigDecimal amount);
 }
 

@@ -3,7 +3,6 @@ package lsp.bank.problem;
 import java.math.BigDecimal;
 
 public class FixedTermDepositAccount extends AbstractAccount {
-    // Overridden methods...
 
     @Override
     protected void deposit(BigDecimal amount) {

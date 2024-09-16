@@ -4,12 +4,14 @@ import java.math.BigDecimal;
 
 public class CustomAccount extends AbstractWithdrawableAccount {
     @Override
-    protected void deposit(BigDecimal amount) {
+    protected BigDecimal deposit(BigDecimal amount) {
         System.out.println("Put " + amount + " to custom account");
+        return amount;
     }
 
     @Override
-    protected void withdraw(BigDecimal amount) {
+    protected BigDecimal withdraw(BigDecimal amount) throws IndexOutOfBoundsException {
         System.out.println("Get " + amount + " from custom account");
+        return amount;
     }
 }

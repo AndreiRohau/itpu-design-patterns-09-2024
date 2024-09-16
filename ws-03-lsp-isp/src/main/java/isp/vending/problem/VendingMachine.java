@@ -3,14 +3,18 @@ package isp.vending.problem;
 // polluted interface
 // since the cohesion between methods is LOW
 public interface VendingMachine {
-    void takeMoney(Object args); // commerce
+    // commerce
+    void takeMoney(Object args);
 
-    void brewCoffee(Object args); // hot bevs
-    void brewHotChocolate(Object args); // hot bevs
-    void brewTea(Object args); // hot bevs
+    // hot bevs
+    void brewCoffee(Object args);
+    void brewHotChocolate(Object args);
+    void brewTea(Object args);
 
-    void dispenseWater(Object args); // cold bevs
-    void dispenseCola(Object args); // cold bevs
+    // cold bevs
+    void dispenseWater(Object args);
+    void dispenseCola(Object args);
 
-    void dispenseSnack(Object args); // snacks
+    // snacks
+    void dispenseSnack(Object args);
 }

@@ -6,12 +6,9 @@ public class FixedTermDepositAccount extends AbstractAccount {
     // Overridden methods...
 
     @Override
-    protected void deposit(BigDecimal amount) {
+    protected BigDecimal deposit(BigDecimal amount) {
         System.out.println("Put " + amount + " to FixedTerm account");
+        return amount;
     }
 
-    @Override
-    protected void withdraw(BigDecimal amount) {
-        throw new UnsupportedOperationException("Withdrawals are not supported by FixedTermDepositAccount!!");
-    }
 }

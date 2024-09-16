@@ -3,8 +3,8 @@ package lsp.semanticProblem.color;
 public class MainProblem {
     public static void main(String[] args) {
         // violate LSP because color of green object is blue
-        Green green = new Blue();
-        green.getColor();
+        Green inFactBlue = new Blue();
+        inFactBlue.getColor();
         //output: Blue
     }
 }

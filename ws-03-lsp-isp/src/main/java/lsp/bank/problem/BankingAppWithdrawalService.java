@@ -10,6 +10,10 @@ public class BankingAppWithdrawalService {
     }
 
     public void withdraw(BigDecimal amount) {
-        account.withdraw(amount);
+        try {
+            account.withdraw(amount);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

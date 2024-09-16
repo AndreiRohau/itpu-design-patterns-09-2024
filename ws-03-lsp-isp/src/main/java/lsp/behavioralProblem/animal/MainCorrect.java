@@ -3,7 +3,7 @@ package lsp.behavioralProblem.animal;
 public class MainCorrect {
 }
 
-interface Bird_{
+interface Bird_ {
 }
 
 interface FlyingBird_ extends Bird_ {

@@ -2,22 +2,22 @@ package lsp.semanticProblem.color;
 
 public class MainCorrect {
     public static void main(String[] args) {
-        IColor color = new BlueV2();
+        Color color = new BlueV2();
         color.getColor();
         //output: Blue
     }
 }
-interface IColor{
+interface Color{
     public void getColor();
 }
 
-class GreenV2 implements IColor {
+class GreenV2 implements Color {
     public void getColor() {
         System.out.println("Green");
     }
 }
 
-class BlueV2 implements IColor {
+class BlueV2 implements Color {
     public void getColor() {
         System.out.println("Blue");
     }

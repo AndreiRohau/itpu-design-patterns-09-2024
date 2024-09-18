@@ -1,4 +1,4 @@
-class Rectangle {
+export class Rectangle {
   constructor(private width: number, private length: number) {}
 
   public setWidth(width: number) {

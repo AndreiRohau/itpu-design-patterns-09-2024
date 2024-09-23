@@ -2,6 +2,7 @@ package dip.learningExample.daoExample.step2.highLevel;
 
 import dip.learningExample.daoExample.step2.abstraction.CustomerDao;
 import dip.learningExample.daoExample.step2.domain.Customer;
+import dip.learningExample.daoExample.step2.domain.Id;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,7 +21,7 @@ public class CustomerService {
 
     // standard constructor / getter
 
-    public Optional<Customer> findById(int id) {
+    public Optional<Customer> findById(Id id) {
         return customerDao.findById(id);
     }
 

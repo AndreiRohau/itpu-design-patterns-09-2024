@@ -5,6 +5,7 @@ public class Main {
         Service service = new Service();
         Controller controller = new Controller();
         controller.setService(service);
+
         controller.doIt();
         System.out.println("Easy to test");
     }

@@ -2,13 +2,10 @@ package di.dependency.field;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class IoC {
     private static Map<String, Object> beansMap = new HashMap<>();
-
-
 
     public static void initBeans() {
         System.out.println("Initializing beans");
@@ -27,6 +24,7 @@ public class IoC {
             Field nameField = controller.getClass().getDeclaredField("service");
             nameField.setAccessible(true);  // Turn off access checks
             nameField.set(controller, beansMap.get(Service.class.getSimpleName()));
+            nameField.setAccessible(false);
         } catch (NoSuchFieldException | IllegalAccessException e) {
             throw new RuntimeException(e);
         }

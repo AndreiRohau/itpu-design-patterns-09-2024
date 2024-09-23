@@ -1,6 +1,7 @@
 package dip.learningExample.daoExample.step1.module;
 
 import dip.learningExample.daoExample.step1.module.domain.Customer;
+import dip.learningExample.daoExample.step1.module.domain.Id;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,7 +20,7 @@ public class CustomerService {
 
     // standard constructor / getter
 
-    public Optional<Customer> findById(int id) {
+    public Optional<Customer> findById(Id id) {
         return customerDao.findById(id);
     }
 

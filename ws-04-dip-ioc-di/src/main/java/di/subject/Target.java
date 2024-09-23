@@ -6,4 +6,8 @@ public class Target {
     @Inject
     @Favourites
     Subject subject;
+
+    public Target(Subject subject) {
+        this.subject = subject;
+    }
 }

@@ -1,8 +1,9 @@
-package com.baeldung.dip.services;
+package com.arohau.dip.service;
 
-import com.baeldung.dip.daos.CustomerDao;
-import com.baeldung.dip.entities.Customer;
-import java.util.Map;
+import com.arohau.dip.dao.CustomerDao;
+import com.arohau.dip.entity.Customer;
+
+import java.util.List;
 import java.util.Optional;
 
 public class CustomerService {

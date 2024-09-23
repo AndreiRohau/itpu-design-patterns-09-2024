@@ -1,13 +1,11 @@
-package com.baeldung.dip.daos;
+package com.arohau.dip.dao;
 
-import com.baeldung.dip.entities.Customer;
-import java.util.Map;
+import com.arohau.dip.entity.Customer;
+
+import java.util.List;
 import java.util.Optional;
 
 public interface CustomerDao {
-
     Optional<Customer> findById(int id);
-
     List<Customer> findAll();
-
 }

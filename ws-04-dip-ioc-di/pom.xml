@@ -13,6 +13,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <javaee-api.version>8.0</javaee-api.version>
     </properties>
 
     <dependencies>
@@ -33,6 +34,13 @@
             <artifactId>assertj-core</artifactId>
             <version>3.26.0</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>${javaee-api.version}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

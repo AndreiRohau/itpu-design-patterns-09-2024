@@ -12,6 +12,7 @@ export function HttpClient(): ApiClient {
         console.log("getting user by email... in HttpClient")
         if (email === "bob@bob.com") {
             return new User(email, "a-password")
+        } else {
             return undefined
         }
     },

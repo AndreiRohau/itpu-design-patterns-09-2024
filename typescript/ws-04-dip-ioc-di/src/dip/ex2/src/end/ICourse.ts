@@ -1,4 +1,4 @@
-// domain/User.ts
+// domain/ICourse.ts
 export interface ICourse {
     id: number
     name: string

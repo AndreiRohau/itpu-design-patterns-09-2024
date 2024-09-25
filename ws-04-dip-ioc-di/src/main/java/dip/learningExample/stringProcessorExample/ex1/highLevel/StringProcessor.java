@@ -11,6 +11,7 @@ import dip.learningExample.stringProcessorExample.ex1.lowLevel.StringWriter;
 // There is no inversion of dependencies, hence StringProcessor is not reusable in a different context.
 public class StringProcessor {
 
+    // dependencies
     private final StringReader stringReader;
     private final StringWriter stringWriter;
 

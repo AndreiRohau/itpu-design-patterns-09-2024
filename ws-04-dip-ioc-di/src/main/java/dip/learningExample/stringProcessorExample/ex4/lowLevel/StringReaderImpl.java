@@ -6,6 +6,6 @@ import dip.learningExample.stringProcessorExample.ex4.domain.ValueToWrite;
 public class StringReaderImpl implements StringReader {
     @Override
     public ValueToWrite getValue() {
-        return null;
+        return new ValueToWrite();
     }
 }

@@ -17,11 +17,17 @@ public class SimpleCustomerDao implements CustomerDao {
 
     @Override
     public Optional<Customer> findById(int id) {
+        System.out.println("SimpleCustomerDao findById");
         return Optional.ofNullable(customers.get(id));
     }
 
     @Override
     public List<Customer> findAll() {
+        System.out.println("SimpleCustomerDao findAll");
         return new ArrayList<>(customers.values());
+    }
+
+    public void setCustomers(Map<Integer, Customer> customers) {
+        this.customers = customers;
     }
 }

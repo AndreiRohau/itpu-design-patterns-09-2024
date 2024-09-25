@@ -8,7 +8,10 @@ import java.util.Optional;
 
 public class CustomerService {
 
-    private final CustomerDao customerDao;
+    private CustomerDao customerDao;
+
+    public CustomerService() {
+    }
 
     public CustomerService(CustomerDao customerDao) {
         this.customerDao = customerDao;
@@ -20,5 +23,9 @@ public class CustomerService {
 
     public List<Customer> findAll() {
         return customerDao.findAll();
+    }
+
+    public void setCustomerDao(CustomerDao customerDao) {
+        this.customerDao = customerDao;
     }
 }

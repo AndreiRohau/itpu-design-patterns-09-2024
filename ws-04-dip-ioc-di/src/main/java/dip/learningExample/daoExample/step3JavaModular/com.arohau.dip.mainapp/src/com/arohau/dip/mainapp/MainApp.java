@@ -1,22 +1,34 @@
 package com.arohau.dip.mainapp;
 
-import com.arohau.dip.daoimpl.SimpleCustomerDao;
-import com.arohau.dip.daov2impl.CustomV2DaoImpl;
+import com.arohau.dip.dao.CustomerDao;
 import com.arohau.dip.entity.Customer;
 import com.arohau.dip.service.CustomerService;
-import java.util.HashMap;
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+import static java.util.Objects.nonNull;
 
 public class MainApp {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         var customers = new HashMap<Integer, Customer>();
         customers.put(1, new Customer("John"));
         customers.put(2, new Customer("Susan"));
 
-        CustomerService simpleCustomerService = new CustomerService(new SimpleCustomerDao(customers));
-        CustomerService customerServiceV2 = new CustomerService(new CustomV2DaoImpl(customers));
+        ServiceLoader<CustomerService> customerServices = ServiceLoader.load(CustomerService.class);
+        CustomerService customerService = customerServices.findFirst().orElse(null);
 
-        simpleCustomerService.findAll().forEach(System.out::println);
-        customerServiceV2.findAll().forEach(System.out::println);
+        ServiceLoader<CustomerDao> customerDaos = ServiceLoader.load(CustomerDao.class);
+        List<CustomerDao> daos = customerDaos.stream()
+                .map(ServiceLoader.Provider::get)
+                .filter(Objects::nonNull)
+                .collect(Collectors.toList());
+
+        for (CustomerDao dao : daos) {
+            customerService.setCustomerDao(dao);
+            customerService.findAll().forEach(System.out::println);
+            System.out.println();
+        }
     }
 }

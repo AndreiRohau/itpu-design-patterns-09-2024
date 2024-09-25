@@ -26,4 +26,8 @@ public class CustomV2DaoImpl implements CustomerDao {
         System.out.println("CustomV2DaoImpl findAll");
         return new ArrayList<>(customers.values());
     }
+
+    public void setCustomers(Map<Integer, Customer> customers) {
+        this.customers = customers;
+    }
 }

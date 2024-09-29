@@ -11,6 +11,7 @@ public class WeatherView implements Observer {
     public void update() {
         displayTemperature(model.readCelsius(), model.readFahrenheit(), model.readKelvin());
         displayHumidity(model.readHumidity());
+        System.out.println("-".repeat(11));
     }
 
     private void displayTemperature(double celsius, double fahrenheit, double kelvin) {

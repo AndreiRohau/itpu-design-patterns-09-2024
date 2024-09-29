@@ -3,6 +3,8 @@ package com.arohau.ex4;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.util.Objects.nonNull;
+
 public class WeatherStation {
     private final Thermometer thermometerModel;
     private final Hygrometer hygrometerModel;
@@ -41,6 +43,17 @@ public class WeatherStation {
         return hygrometerModel.getHumidity();
     }
     // endregion
+
+    // todo how to improve this to make it not be dependant of Details?
+    public void writeCelsiusAndWriteHumidity(Double celsius, Double humidity) {
+        if (nonNull(celsius)) {
+            thermometerModel.setCelsius(celsius);
+        }
+        if (nonNull(celsius)) {
+            hygrometerModel.setHumidity(humidity);
+        }
+        notifyObservers();
+    }
 
     // region work with Observer part
     public void registerObserver(Observer observer) {

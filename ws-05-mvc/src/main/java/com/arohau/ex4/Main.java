@@ -13,8 +13,8 @@ public class Main {
 
         WeatherController controller = new WeatherController(model);
         // Change Weather Station data using Controller
-        controller.changeWeather(20.0, 85.0);
-        controller.changeWeather(30.0, 95.0);
+        controller.writeCelsiusAndWriteHumidity(20.0, 85.0);
+        controller.writeCelsiusAndWriteHumidity(30.0, 95.0);
         model.removeObserver(view);
     }
 }

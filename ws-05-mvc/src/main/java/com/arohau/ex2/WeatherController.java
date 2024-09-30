@@ -8,6 +8,7 @@ public class WeatherController {
         this.model = model;
         this.view = view;
     }
+
     public void changeTemperature(double celsius) {
         model.setCelsius(celsius);
         view.displayTemperature(model.getCelsius(), model.readFahrenheit(), model.readKelvin());

@@ -7,7 +7,7 @@ public class WeatherController {
         this.model = model;
     }
 
-    public void changeWeather(Double celsius, Double humidity) {
+    public void writeCelsiusAndWriteHumidity(Double celsius, Double humidity) {
         model.writeCelsiusAndWriteHumidity(celsius, humidity);
     }
 }

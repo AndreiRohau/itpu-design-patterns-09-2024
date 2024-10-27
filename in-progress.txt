@@ -1,1 +1,10 @@
 https://www.linkedin.com/learning/programming-foundations-design-patterns-2/challenge-the-strategy-pattern?autoSkip=true&resume=false&u=2113185
+
+
+https://www.linkedin.com/learning/practical-design-patterns-in-swift/creational-structural-and-behavioral-patterns?resume=false&u=2113185
+
+
+https://www.linkedin.com/learning/design-patterns-creational/creational-patterns?u=2113185
+
+
+

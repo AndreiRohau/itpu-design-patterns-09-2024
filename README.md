@@ -1,4 +1,6 @@
 # itpu-design-patterns-09-2024
+[repo](https://github.com/AndreiRohau/itpu-design-patterns-09-2024)
+
 JDK 17
 
 #### Basic principles of object-oriented design

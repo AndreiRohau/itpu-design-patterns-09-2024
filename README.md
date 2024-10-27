@@ -62,3 +62,4 @@ ___
 ___
 16. 
     - Advanced patterns: Strategy
+___

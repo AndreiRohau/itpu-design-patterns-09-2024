@@ -43,6 +43,4 @@ public class BankAccount {
             return new BankAccount(this);
         }
     }
-
 }
-

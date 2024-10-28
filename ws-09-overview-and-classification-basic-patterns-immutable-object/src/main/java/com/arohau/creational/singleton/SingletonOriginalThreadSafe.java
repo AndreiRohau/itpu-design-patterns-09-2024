@@ -26,14 +26,14 @@ public class SingletonOriginalThreadSafe {
     private static SingletonOriginalThreadSafe instance_;
     // original thread safe approach
     public SingletonOriginalThreadSafe getInstance_() {
-        if (instance == null) {
+        if (instance_ == null) {
             synchronized (this) {
-                if (instance == null) {
-                    instance = new SingletonOriginalThreadSafe();
+                if (instance_ == null) {
+                    instance_ = new SingletonOriginalThreadSafe();
                 }
             }
         }
-        return instance;
+        return instance_;
     }
 
     // other functions and members...

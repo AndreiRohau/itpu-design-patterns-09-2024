@@ -21,10 +21,22 @@ public class Main {
         When client expects different representations for the object that’s constructed
      */
     private static void testBuilder() {
+        BankAccount newAccount_1 = new BankAccount();
+        newAccount_1.setName("Jon");
+        newAccount_1.setAccountNumber("22738022275");
+
+        BankAccount newAccount_2 = new BankAccount("Jon", "22738022275", "jon@example.com", false);
+
+        // builder approach
         BankAccount newAccount = new BankAccount
                 .BankAccountBuilder("Jon", "22738022275")
                 .withEmail("jon@example.com")
                 .wantNewsletter(true)
+                .build();
+
+        BankAccount newAccount_lombok = BankAccount.builder()
+                .accountNumber("")
+                .accountNumber("")
                 .build();
 
         System.out.println(newAccount);

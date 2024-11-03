@@ -138,8 +138,11 @@ public class Main {
         // perform actions -> the other party members
         // are notified by the party
         hobbit.act(Action.ENEMY);
+        System.out.println("-".repeat(10));
         wizard.act(Action.TALE);
+        System.out.println("-".repeat(10));
         rogue.act(Action.GOLD);
+        System.out.println("-".repeat(10));
         hunter.act(Action.HUNT);
     }
 

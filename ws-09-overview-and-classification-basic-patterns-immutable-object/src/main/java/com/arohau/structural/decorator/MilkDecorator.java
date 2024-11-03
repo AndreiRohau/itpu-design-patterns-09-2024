@@ -8,11 +8,19 @@ public class MilkDecorator implements Coffee {
         this.coffee = coffee;
     }
 
+    @Override
     public double cost() {
-        return coffee.cost() + 0.5; // Additional cost for milk
+        double milkCost = 0.5;
+        double originalCost = coffee.cost();
+        double decoratedResult = originalCost + milkCost;
+        return decoratedResult;
     }
 
+    @Override
     public String getDescription() {
-        return coffee.getDescription() + ", Milk";
+        String mildDescription = ", Milk";
+        String originalDescription = coffee.getDescription();
+        String decoratedResult = originalDescription + mildDescription;
+        return decoratedResult;
     }
 }

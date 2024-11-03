@@ -1,14 +1,22 @@
 package com.arohau.creational.builder;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class BankAccount {
 
     private String name;
     private String accountNumber;
     private String email;
     private boolean newsletter;
+
+    // getter n setters persist
 
     public BankAccount(BankAccountBuilder bankAccountBuilder) {
         name = bankAccountBuilder.name;

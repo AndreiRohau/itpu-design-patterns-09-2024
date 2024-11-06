@@ -2,21 +2,24 @@ package com.arohau.creational.singleton;
 
 /*
 https://medium.com/@cancerian0684/singleton-design-pattern-and-how-to-make-it-thread-safe-b207c0e7e368
+1. one instance
+2. lazy loading
+3. thread safety
  */
 public class SingletonOriginalThreadSafe {
-    private volatile SingletonOriginalThreadSafe instance;
-
+    private static volatile SingletonOriginalThreadSafe INSTANCE;
+    private SingletonOriginalThreadSafe(){}
     /*
     Using localRef, we are reducing the access of volatile variable to just one for positive usecase.
     The volatile keyword ensures that multiple threads handle the singleton instance correctly.
      */
-    public SingletonOriginalThreadSafe getInstance() {
-        SingletonOriginalThreadSafe localRef = instance;
+    public static SingletonOriginalThreadSafe getInstance() {
+        SingletonOriginalThreadSafe localRef = INSTANCE;
         if (localRef == null) {
-            synchronized (this) {
-                localRef = instance;
+            synchronized (SingletonOriginalThreadSafe.class) {
+                localRef = INSTANCE;
                 if (localRef == null) {
-                    instance = localRef = new SingletonOriginalThreadSafe();
+                    INSTANCE = localRef = new SingletonOriginalThreadSafe();
                 }
             }
         }
@@ -25,9 +28,9 @@ public class SingletonOriginalThreadSafe {
 
     private static SingletonOriginalThreadSafe instance_;
     // original thread safe approach
-    public SingletonOriginalThreadSafe getInstance_() {
+    public static SingletonOriginalThreadSafe getInstance_() {
         if (instance_ == null) {
-            synchronized (this) {
+            synchronized (SingletonOriginalThreadSafe.class) {
                 if (instance_ == null) {
                     instance_ = new SingletonOriginalThreadSafe();
                 }

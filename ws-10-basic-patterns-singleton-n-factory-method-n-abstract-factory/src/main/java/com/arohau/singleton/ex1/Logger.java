@@ -7,6 +7,7 @@ public enum Logger {
         return INSTANCE;
     }
 
+    // service logic
     public void log(String logMessage) {
         System.out.println(logMessage);
     }

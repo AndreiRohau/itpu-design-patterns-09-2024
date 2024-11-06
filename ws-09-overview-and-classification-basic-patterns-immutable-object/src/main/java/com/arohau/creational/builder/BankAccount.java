@@ -18,31 +18,31 @@ public class BankAccount {
 
     // getter n setters persist
 
-    public BankAccount(BankAccountBuilder bankAccountBuilder) {
+    public BankAccount(BankAccountBuilder2 bankAccountBuilder) {
         name = bankAccountBuilder.name;
         accountNumber = bankAccountBuilder.accountNumber;
         email = bankAccountBuilder.email;
         newsletter = bankAccountBuilder.newsletter;
     }
 
-    public static class BankAccountBuilder {
+    public static class BankAccountBuilder2 {
 
         private String name;
         private String accountNumber;
         private String email;
         private boolean newsletter;
 
-        public BankAccountBuilder(String name, String accountNumber) {
+        public BankAccountBuilder2(String name, String accountNumber) {
             this.name = name;
             this.accountNumber = accountNumber;
         }
 
-        public BankAccountBuilder withEmail(String email) {
+        public BankAccountBuilder2 withEmail(String email) {
             this.email = email;
             return this;
         }
 
-        public BankAccountBuilder wantNewsletter(boolean newsletter) {
+        public BankAccountBuilder2 wantNewsletter(boolean newsletter) {
             this.newsletter = newsletter;
             return this;
         }

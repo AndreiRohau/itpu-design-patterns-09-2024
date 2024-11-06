@@ -1,7 +1,6 @@
 package com.arohau.abstractFactory.ex2;
 
 public class App {
-
     public static void main(String[] args) {
         UserInterface roadUserInterface = createUserInterface("RED");
         UserInterface mountainUserInterface = createUserInterface("BLUE");

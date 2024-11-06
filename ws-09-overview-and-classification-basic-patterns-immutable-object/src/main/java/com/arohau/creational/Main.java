@@ -8,10 +8,10 @@ import com.arohau.creational.singleton.Singleton;
 public class Main {
     public static void main(String[] args) {
         testSingleton();
-        System.out.println("#".repeat(20));
-        testFactoryMethod();
-        System.out.println("#".repeat(20));
-        testBuilder();
+//        System.out.println("#".repeat(20));
+//        testFactoryMethod();
+//        System.out.println("#".repeat(20));
+//        testBuilder();
     }
 
     /*
@@ -29,7 +29,7 @@ public class Main {
 
         // builder approach
         BankAccount newAccount = new BankAccount
-                .BankAccountBuilder("Jon", "22738022275")
+                .BankAccountBuilder2("Jon", "22738022275")
                 .withEmail("jon@example.com")
                 .wantNewsletter(true)
                 .build();

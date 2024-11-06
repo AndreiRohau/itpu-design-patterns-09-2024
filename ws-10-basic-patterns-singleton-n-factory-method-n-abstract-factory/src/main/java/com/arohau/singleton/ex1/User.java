@@ -1,27 +1,31 @@
 package com.arohau.singleton.ex1;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-@AllArgsConstructor
 public class User {
 
-    private static volatile User instance = null;
+    private static volatile User INSTANCE;
 
     private String name;
     private String email;
     private String country;
 
+    private User(String name, String email, String country) {
+        this.name = name;
+        this.email = email;
+        this.country = country;
+    }
+
     public static User getSingletonInstance(String name, String email, String country) {
-        if (instance == null) {
+        if (INSTANCE == null) {
             synchronized (User.class) {
-                if (instance == null) {
-                    instance = new User(name, email, country);
+                if (INSTANCE == null) {
+                    INSTANCE = new User(name, email, country);
                 }
             }
         }
-        return instance;
+        return INSTANCE;
     }
 }
 

@@ -1,13 +1,13 @@
 package com.arohau.factoryMethod.ex1;
 
-public class BusTicket implements Ticket {
+public class PlaneTicket implements Ticket {
     @Override
     public String getTicketType() {
-        return "A Valid Bus Ticket";
+        return "A valid Plane Ticket";
     }
 
     @Override
     public int getPrice() {
-        return 3;
+        return 120;
     }
 }

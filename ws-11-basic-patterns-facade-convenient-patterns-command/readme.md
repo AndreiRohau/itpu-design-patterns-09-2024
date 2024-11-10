@@ -24,6 +24,6 @@ ___
 - [Command](https://refactoring.guru/design-patterns/command)
 - [JavaScript Command Design Pattern](https://www.dofactory.com/javascript/design-patterns/command)
 - [Command Pattern (javascript)](https://www.patterns.dev/vanilla/command-pattern)
-___
 - []()
+___
 - []()

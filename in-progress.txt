@@ -8,3 +8,5 @@ https://www.linkedin.com/learning/design-patterns-creational/creational-patterns
 
 https://www.linkedin.com/learning/complete-guide-to-java-design-patterns-creational-behavioral-and-structural/solution-the-factory-method-pattern?autoSkip=true&resume=false&u=2113185
 
+https://www.linkedin.com/learning/typescript-design-patterns/implement-an-facade-pattern
+

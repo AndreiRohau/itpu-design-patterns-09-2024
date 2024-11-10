@@ -12,7 +12,16 @@
   npm init -y &
   npm i --save-dev typescript @types/express @types/node &
   npx tsc --init &
-  echo now update package.json and tsconfig.json files & echo
+  echo now update package.json and tsconfig.json files & 
+  echo "--------" &
+  echo "package -> scripts -\>" &
+  echo "start": "npx tsc && node build/usage.js", &
+  echo "--------" &
+  echo &
+  echo tsconfig.json &
+  echo "lines: 14 - target - ES2022 | 29 - rootDir - ./src | 60 - outDir - ./build &" &
+  echo "--------" &
+  echo &
   ```
 0. **Update package.json and tsconfig.json manually**
 

@@ -17,6 +17,7 @@ immutableEx1.run()
 var low = new Low('hello') // v1
 var mid = new Mid(1991, low)
 var high = new High(1, mid)
+// low, mid, low, high, mid, low
 print(high.toString())
 
 print('########')

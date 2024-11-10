@@ -1,5 +1,3 @@
-console.log("works")  
-
 // Define an interface for the type of objects the factory will create
 interface Cellphone {
     use(): void;
@@ -14,7 +12,7 @@ class Iphone implements Cellphone {
 
 class Galaxy implements Cellphone {
     use(): void {
-        console.log("Using samsung");
+        console.log("Using galaxy");
     }
 }
 

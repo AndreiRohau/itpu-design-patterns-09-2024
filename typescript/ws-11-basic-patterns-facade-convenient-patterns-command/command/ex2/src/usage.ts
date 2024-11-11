@@ -58,6 +58,7 @@ class CancelOrderCommand implements Command {
     }
 }
 
+// process starts:
 const manager = new OrderManager();
 
 manager.printOrders()

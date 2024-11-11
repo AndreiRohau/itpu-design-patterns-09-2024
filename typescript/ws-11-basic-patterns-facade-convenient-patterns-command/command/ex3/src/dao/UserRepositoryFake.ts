@@ -1,5 +1,6 @@
 import {User} from '../domain/User'
 
+// singleton
 export class UserRepositoryFake {
     private static instance: UserRepositoryFake
     private _usersStorage: Map<string, User>

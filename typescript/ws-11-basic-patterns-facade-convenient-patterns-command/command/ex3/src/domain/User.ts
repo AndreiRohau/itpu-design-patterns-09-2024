@@ -1,6 +1,6 @@
 export class User {
-    private _id: string
-    private _name: string
+    private readonly _id: string
+    private readonly _name: string
 
     public constructor(id: string, name: string) {
         this._id = id

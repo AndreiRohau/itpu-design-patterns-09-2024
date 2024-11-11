@@ -36,5 +36,4 @@ export class UserService {
         console.log(`Deleting... ${user}`)
         this._userRepository.deleteUserById(user.id)
     }
-
 }

@@ -2,7 +2,7 @@
 ### Deploy locally and Run app
 - deploy \ install project dependencies
   ```shell 
-  npm i --save-dev typescript @types/express @types/node
+  npm install
   ```
 - run usage.ts in command line
   ```shell 

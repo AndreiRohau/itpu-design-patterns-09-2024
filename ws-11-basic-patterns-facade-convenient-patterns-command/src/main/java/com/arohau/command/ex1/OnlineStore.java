@@ -10,6 +10,14 @@ public class OnlineStore {
         var item2 = new Item(2);
         var item3 = new Item(3);
 
+        // original
+        item1.addToBasket();
+        item2.addToBasket();
+        item3.addToBasket();
+        item2.removeFromBasket();
+
+        // command pattern
+        System.out.println();
         ItemOperationExecutor itemOperationExecutor = new ItemOperationExecutor();
 
         itemOperationExecutor.doOperation(new AddItemToBasketOperation(item1));
@@ -18,7 +26,7 @@ public class OnlineStore {
         itemOperationExecutor.doOperation(new RemoveItemFromBasketOperation(item2));
 
         // queue
-
+        System.out.println();
         itemOperationExecutor.queueOperation(new AddItemToBasketOperation(item1));
         itemOperationExecutor.queueOperation(new AddItemToBasketOperation(item2));
         itemOperationExecutor.queueOperation(new AddItemToBasketOperation(item3));

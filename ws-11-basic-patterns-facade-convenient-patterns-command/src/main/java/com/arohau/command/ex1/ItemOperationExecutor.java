@@ -5,10 +5,12 @@ import java.util.List;
 
 public class ItemOperationExecutor {
 
+    // common approach
     public void doOperation(ItemOperation itemOperation) {
         itemOperation.execute();
     }
 
+    // queue approach
     List<ItemOperation> itemOperations = new ArrayList<>();
 
     public void queueOperation(ItemOperation itemOperation) {

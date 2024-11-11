@@ -1,6 +1,6 @@
 ### install guide
 - [How to install NVM on Windows 11](https://www.youtube.com/watch?v=E6k6R4PnLV0)
-- make sure nvm and node are unistalled from your PC
+- !!! make sure nvm and node are uninstalled from your PC
 - [nvm-windows/releases](https://github.com/coreybutler/nvm-windows/releases)
 - [download/1.1.12/nvm-setup.exe](https://github.com/coreybutler/nvm-windows/releases/download/1.1.12/nvm-setup.exe)
 

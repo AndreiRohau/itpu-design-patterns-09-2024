@@ -24,13 +24,22 @@ export class UserRepositoryFake {
         this._usersStorage.set(user.id, user)
     }
 
-    public getUserById(id: string) {
-        return this._usersStorage.has(id) ? this._usersStorage.get(id) : null
+    public getUserById(id: string): User | null {
+        let user = null
+        if (this._usersStorage.has(id)) {
+            user = this._usersStorage.get(id)
+            if (user == undefined) {
+                user = null
+            }
+        }
+        return user
     }
 
     public updateUser(user: User) {
         if (this._usersStorage.has(user.id)) {
             this._usersStorage.set(user.id, user)
+        } else {
+            console.log(`User with id=${user.id} NOT exists (noone is updated)`)
         }
     }
 

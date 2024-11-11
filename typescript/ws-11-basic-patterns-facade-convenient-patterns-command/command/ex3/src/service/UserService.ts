@@ -22,9 +22,9 @@ export class UserService {
         this._userRepository.createUser(user)
     }
 
-    public readUser(user: User) {
+    public readUser(user: User): User | null {
         console.log(`Reading... ${user}`)
-        this._userRepository.getUserById(user.id)
+        return this._userRepository.getUserById(user.id)
     }
 
     public updateUser(user: User) {

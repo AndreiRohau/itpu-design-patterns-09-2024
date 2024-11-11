@@ -35,10 +35,18 @@ class Publisher {
 }
 
 // Client
-function publisherClient() {
-    const publisher = new Publisher()
-    publisher.publish()
+class PublisherClient {
+    private _publisher: Publisher
+
+    public constructor() {
+        this._publisher = new Publisher()
+    }
+
+    public publishEverywhere() {
+        this._publisher.publish()
+    }
 }
 
-publisherClient()
+const client: PublisherClient = new PublisherClient()
+client.publishEverywhere()
 

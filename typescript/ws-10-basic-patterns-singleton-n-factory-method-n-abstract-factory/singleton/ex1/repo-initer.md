@@ -1,6 +1,10 @@
 - [How to Setup a TypeScript + Node.js Project](https://www.youtube.com/watch?v=x-j8OnM15tA)
-### Run app
-- npm start
+### Deploy locally and Run app
+- deploy \ install project dependencies
+  ```shell 
+  npm i --save-dev typescript @types/express @types/node
+  ```
+- run usage.ts in command line
   ```shell 
   npm start
   ```

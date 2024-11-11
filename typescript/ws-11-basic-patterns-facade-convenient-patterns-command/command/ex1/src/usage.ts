@@ -1,5 +1,6 @@
 console.log("works")  
 
+// just a function like static one, can be treated like lambdas
 function add(x: number, y: number): number { return x + y; }
 function sub(x: number, y: number): number { return x - y; }
 function mul(x: number, y: number): number { return x * y; }

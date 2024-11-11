@@ -27,19 +27,19 @@ class CloudProviderService {
 
 
 class CloudProviderFacade {
-  private service: CloudProviderService;
+  private _service: CloudProviderService;
 
-  constructor() {
-    this.service = new CloudProviderService();
+  public constructor() {
+    this._service = new CloudProviderService();
   }
 
   public uploadFile(file: string): string {
-    if (!this.service.isLoggedIn(true)) {
-      this.service.logIn();
+    if (!this._service.isLoggedIn(true)) {
+      this._service.logIn();
     }
-    const convertedFile = this.service.convertFile(file);
-    this.service.uploadFile(convertedFile);
-    return this.service.getFileLink(convertedFile);
+    const convertedFile = this._service.convertFile(file);
+    this._service.uploadFile(convertedFile);
+    return this._service.getFileLink(convertedFile);
   }
 }
 

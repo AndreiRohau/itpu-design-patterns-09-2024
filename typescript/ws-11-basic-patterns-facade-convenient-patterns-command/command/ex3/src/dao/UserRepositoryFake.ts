@@ -1,9 +1,9 @@
 import {User} from '../domain/User'
 
-// singleton
+// singleton repository
 export class UserRepositoryFake {
     private static instance: UserRepositoryFake
-    private _usersStorage: Map<string, User>
+    private _usersStorage: Map<string, User> // id to User data
     private constructor() {
         this._usersStorage = new Map<string, User>()
     }

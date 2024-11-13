@@ -1,3 +1,4 @@
+// immutable data transfer object
 export class User {
     private readonly _id: string
     private readonly _name: string

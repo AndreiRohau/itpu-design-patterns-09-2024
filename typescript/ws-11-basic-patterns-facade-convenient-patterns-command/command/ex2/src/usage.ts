@@ -20,41 +20,46 @@ abstract class Command {
 }
 
 class PlaceOrderCommand implements Command {
-    args
+    orderName
+    orderId
     constructor(...args) {
-        this.args = args
+        // validate proper argument is passed
+        this.orderName = args[0]
+        this.orderId = args[1]
     }
     execute(orders): void {
-        orders.push(this.args[1]);
-        console.log(`You have successfully ordered ${this.args[0]} (${this.args[1]})`);
+        orders.push(this.orderId);
+        console.log(`You have successfully ordered ${this.orderName} (${this.orderId})`);
     }
 }
 
 class TrackOrderCommand implements Command {
-    args
+    orderId
     constructor(...args) {
-        this.args = args
+        // validate proper argument is passed
+        this.orderId = args[0]
     }
     execute(orders): void {
-        console.log(`Your order ${this.args[0]} will arrive in 20 minutes.`)
+        console.log(`Your order ${this.orderId} will arrive in 20 minutes.`)
     }
 }
 
 class CancelOrderCommand implements Command {
-    args
+    orderId
     constructor(...args) {
-        this.args = args
+        // validate proper argument is passed
+        this.orderId = args[0]
     }
     execute(orders): void {
         orders = orders.filter(order => {
                 for (let i = 0; i < orders.length; i++) {
-                    if (orders[i] === this.args[0]) {
+                    if (orders[i] === this.orderId) {
                         orders.splice(i, 1);
                         i--; // Adjust the index since we've modified the array
                     }
                 }
             });
-        console.log(`You have canceled your order ${this.args[0]}`);
+        console.log(`You have canceled your order ${this.orderId}`);
     }
 }
 

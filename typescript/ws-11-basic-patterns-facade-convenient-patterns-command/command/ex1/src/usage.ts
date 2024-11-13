@@ -64,18 +64,20 @@ class Calculator {
     }
 }
 
-
 const calculator = new Calculator();
 console.log(`Start value : ${calculator.getCurrentValue()}`);
-calculator.getCurrentValue()
-// Issue commands
-calculator.execute(new AddCommand(100));
-calculator.execute(new SubCommand(24));
-calculator.execute(new MulCommand(6));
-calculator.execute(new DivCommand(2));
-// Reverse last two commands
-calculator.undo();
-calculator.undo();
 
-console.log(`\nValue: ${calculator.getCurrentValue()}`);
+// main commands
+calculator.execute(new AddCommand(100)); // 0 + 100 = 100
+calculator.execute(new SubCommand(24)); // 100 - 24 = 76
+calculator.execute(new MulCommand(6)); // 76 * 6 = 456
+calculator.execute(new DivCommand(2)); // 456 / 2 = 228
+
+console.log(`\nValue final : ${calculator.getCurrentValue()}\n`);
+
+// Reverse last two commands
+calculator.undo(); // 228 * 2 = 456
+console.log(`Value undo once: ${calculator.getCurrentValue()}\n`);
+calculator.undo(); // 456 / 6 = 76
+console.log(`Value undo twice: ${calculator.getCurrentValue()}\n`);
 

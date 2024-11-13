@@ -1,7 +1,7 @@
 import {User} from '../domain/User'
 import {UserRepositoryFake} from '../dao/UserRepositoryFake'
 
-// Singleton
+// Singleton Service / business logic layer
 export class UserService {
     private static instance: UserService
     private _userRepository: UserRepositoryFake

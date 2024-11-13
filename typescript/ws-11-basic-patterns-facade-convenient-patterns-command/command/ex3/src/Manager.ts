@@ -4,6 +4,7 @@ import {UserRead} from './command/UserRead'
 import {UserUpdate} from './command/UserUpdate'
 import {UserDelete} from './command/UserDelete'
 
+// DISPATCHER / controller / client / manager
 export class Manager {
     private _commands: Map<string, Command>
 

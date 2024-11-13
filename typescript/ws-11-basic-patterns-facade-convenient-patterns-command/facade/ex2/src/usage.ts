@@ -26,6 +26,7 @@ class CloudProviderService {
 }
 
 
+// facade
 class CloudProviderFacade {
   private _service: CloudProviderService;
 
@@ -42,6 +43,7 @@ class CloudProviderFacade {
     return this._service.getFileLink(convertedFile);
   }
 }
+
 
 const facade = new CloudProviderFacade();
 const fileLink = facade.uploadFile("file.txt");

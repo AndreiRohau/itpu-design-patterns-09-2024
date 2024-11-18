@@ -1,8 +1,9 @@
-console.log("works")  
+import {Observer} from './Observer'
+
+console.log("works")
 
 
-
-const observer = new Observer();
+const observer = new Observer('BASIC STATE');
 
 // Returns a function which, when called, unsubscribes from the observer.
 const unsubscribe = observer.subscribe(data => {

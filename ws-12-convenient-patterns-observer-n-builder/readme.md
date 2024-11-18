@@ -21,6 +21,10 @@ Sources:
 - [Implementing the Observer pattern in JavaScript](https://dev.to/nishanbajracharya/implementing-the-observer-pattern-in-javascript-5heh)
 - []()
 ___
+- [Builder pattern](https://www.linkedin.com/learning/typescript-design-patterns/builder-pattern?u=2113185)
+- [Implement a builder pattern in Typescript](https://www.linkedin.com/learning/typescript-design-patterns/implement-a-builder-pattern?resume=false&u=2113185)
+- []()
+- []()
 - []()
 - []()
 ___

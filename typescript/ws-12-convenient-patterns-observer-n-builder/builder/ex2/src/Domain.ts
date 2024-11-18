@@ -1,9 +1,9 @@
-export interface Builder {
+interface Builder {
     setSeats(seats: number): this
     setEngine(engine: string): this
 }
 
-class Car {
+export class Car {
     private _seats: number = 0
     private _engine: string
 
@@ -18,7 +18,7 @@ class Car {
     }
 }
 
-class CarBuilder implements Builder {
+export class CarBuilder implements Builder {
     private _car: Car
 
     constructor() {
@@ -40,7 +40,7 @@ class CarBuilder implements Builder {
     }
 }
 
-class Motorcycle {
+export class Motorcycle {
     private _seats: number = 0
     private _engine: string
 
@@ -55,7 +55,7 @@ class Motorcycle {
     }
 }
 
-class MotorcycleBuilder implements Builder {
+export class MotorcycleBuilder implements Builder {
     private motorcycle: Motorcycle
 
     constructor() {
@@ -75,19 +75,4 @@ class MotorcycleBuilder implements Builder {
     public getResult(): Motorcycle {
         return this.motorcycle
     }
-}
-
-export function run() {
-    const car = new CarBuilder()
-        .setSeats(4)
-        .setEngine("V-12")
-        .getResult()
-
-    const motorcycle = new MotorcycleBuilder()
-        .setSeats(2)
-        .setEngine("V-4")
-        .getResult()
-
-      console.log(car)
-      console.log(motorcycle)
 }

@@ -1,1 +1,5 @@
-console.log("works")  
+console.log("works")
+
+import {run} from './app'
+
+run()

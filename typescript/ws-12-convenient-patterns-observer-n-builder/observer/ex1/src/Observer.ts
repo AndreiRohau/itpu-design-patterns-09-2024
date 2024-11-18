@@ -1,3 +1,3 @@
-interface Observer {
-    update(currentQuantityInStock:number):void;
+export interface Observer {
+    update(currentQuantityInStock:number): void
 }

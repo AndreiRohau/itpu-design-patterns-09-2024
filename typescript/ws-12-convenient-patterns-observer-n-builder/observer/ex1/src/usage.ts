@@ -1,4 +1,13 @@
-console.log("works")  
+import {XboxStockConcreteSubject} from './subject/XboxStockConcreteSubject'
+import {PlaystationStockConcreteSubject} from './subject/PlaystationStockConcreteSubject'
+import {XboxEmailNotificator} from './observer/XboxEmailNotificator'
+import {XboxWhatsappNotificator} from './observer/XboxWhatsappNotificator'
+import {PlaystationSmsNotificator} from './observer/PlaystationSmsNotificator'
+import {SocialNetworkNotificator} from './observer/SocialNetworkNotificator'
+import {EmailService} from './service/EmailService'
+import {WhatsappService} from './service/WhatsappService'
+import {SmsService} from './service/SmsService'
+import {FacebookSDK} from './service/FacebookSDK'
 
 //Fake data
 const fakeEmails = ['iaan.123@gmail.com','another_guy@123xyz.com',"johndoe@johndoe.com"]
@@ -35,4 +44,3 @@ playstationStockConcreteSubject.quantityInStock = 25
  * Sms Sent: Hey!!! There is 25 PLAYSTATIONS available!! 💁💁
  * Facebook Post Sent: Stock Update! New consoles now available. Grab yours! 🚀 #Restocked
  */
-

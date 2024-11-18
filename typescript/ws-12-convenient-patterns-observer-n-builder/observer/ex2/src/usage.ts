@@ -1,5 +1,8 @@
 console.log("works")  
 
+import {Subject} from './Subject'
+import {Observer} from './Observer'
+
 const observable = new Subject(10);
 const observerA = new Observer(observable);
 const observerB = new Observer(observable);

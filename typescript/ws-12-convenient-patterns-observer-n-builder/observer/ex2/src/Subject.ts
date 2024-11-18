@@ -1,28 +1,30 @@
-class Subject {
-  constructor(state) {
-    this.state = state;
-    this.observers = [];
-  }
+export class Subject {
+    state
+    observers
 
-  getState() {
-    return this.state;
-  }
+    constructor(state) {
+        this.state = state;
+        this.observers = [];
+    }
 
-  setState(state) {
-    this.state = state;
+    getState() {
+        return this.state;
+    }
 
-    this.notifyObservers(this.state);
-  }
+    setState(state) {
+        this.state = state;
+        this.notifyObservers(this.state);
+    }
 
-  registerObserver(observer) {
-    this.observers.push(observer);
-  }
+    registerObserver(observer) {
+        this.observers.push(observer);
+    }
 
-  unregisterObserver(observer) {
-    this.observers = this.observers.filter(obs => obs !== observer);
-  }
+    unregisterObserver(observer) {
+        this.observers = this.observers.filter(obs => obs !== observer);
+    }
 
-  notifyObservers(data) {
-    this.observers.forEach(observer => observer.notify(data));
-  }
+    notifyObservers(data) {
+        this.observers.forEach(observer => observer.notify(data));
+    }
 }

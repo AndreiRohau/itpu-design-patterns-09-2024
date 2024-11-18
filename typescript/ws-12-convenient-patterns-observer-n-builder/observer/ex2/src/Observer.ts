@@ -1,15 +1,16 @@
-class Observer {
-  constructor(subject) {
-    subject.registerObserver(this);
+export class Observer {
+    subscribers
 
-    this.subscribers = [];
-  }
+    constructor(subject) {
+        subject.registerObserver(this);
+        this.subscribers = [];
+    }
 
-  subscribe(subscriber) {
-    this.subscribers.push(subscriber);
-  }
+    subscribe(subscriber) {
+        this.subscribers.push(subscriber);
+    }
 
-  notify(data) {
-    this.subscribers.forEach(subscriber => subscriber(data));
-  }
+    notify(data) {
+        this.subscribers.forEach(subscriber => subscriber(data));
+    }
 }

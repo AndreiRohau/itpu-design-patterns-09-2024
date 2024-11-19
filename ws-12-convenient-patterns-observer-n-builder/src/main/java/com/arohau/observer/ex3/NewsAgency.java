@@ -5,20 +5,20 @@ import java.util.List;
 
 public class NewsAgency {
     private String news;
-    private List<Channel> channels = new ArrayList<>();
+    private List<Channel> subscribers = new ArrayList<>(); // observers
 
     public void addObserver(Channel channel) {
-        this.channels.add(channel);
+        this.subscribers.add(channel);
     }
 
     public void removeObserver(Channel channel) {
-        this.channels.remove(channel);
+        this.subscribers.remove(channel);
     }
 
     public void setNews(String news) {
         this.news = news;
-        for (Channel channel : this.channels) {
-            channel.update(this.news);
+        for (Channel subscriber : this.subscribers) {
+            subscriber.update(this.news);
         }
     }
 }

@@ -8,6 +8,6 @@ public class ONewsAgency extends Observable {
     public void setNews(String news) {
         this.news = news;
         setChanged();
-        notifyObservers(news);
+        notifyObservers(this.news);
     }
 }

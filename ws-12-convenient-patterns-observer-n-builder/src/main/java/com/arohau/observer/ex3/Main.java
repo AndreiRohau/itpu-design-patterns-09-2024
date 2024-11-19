@@ -6,8 +6,9 @@ public class Main {
         NewsChannel observer = new NewsChannel();
 
         observable.addObserver(observer);
-        observable.setNews("news");
+        final String news = "we got some hot news for you";
+        observable.setNews(news);
 
-        System.out.println(observer.getNews().equals("news"));
+        System.out.println(observer.getNews().equals(news));
     }
 }

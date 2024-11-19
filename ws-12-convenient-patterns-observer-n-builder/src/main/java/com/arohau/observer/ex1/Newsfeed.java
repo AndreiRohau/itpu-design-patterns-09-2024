@@ -15,6 +15,7 @@ public class Newsfeed implements PropertyChangeListener {
 
     @Override
     public void propertyChange(PropertyChangeEvent event) {
+        System.out.println("Newsfeed noticed a new PropertyChangeEvent: " + event);
         statuses.add((String) event.getNewValue());
     }
 }

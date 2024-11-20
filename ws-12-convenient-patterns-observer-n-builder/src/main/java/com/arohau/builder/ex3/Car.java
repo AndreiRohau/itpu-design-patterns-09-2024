@@ -1,16 +1,26 @@
 package com.arohau.builder.ex3;
 
+import lombok.ToString;
+
+@ToString
 public class Car extends Vehicle {
 
     private String make;
     private String model;
 
-    // Standard Getter methods..
-
     public Car(CarBuilder builder) {
         super(builder);
         this.make = builder.make;
         this.model = builder.model;
+    }
+
+    // Standard Getter methods..
+    public String getMake() {
+        return make;
+    }
+
+    public String getModel() {
+        return model;
     }
 
     public static class CarBuilder extends VehicleBuilder {

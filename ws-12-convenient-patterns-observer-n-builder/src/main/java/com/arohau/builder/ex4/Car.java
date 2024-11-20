@@ -5,18 +5,18 @@ public class Car extends Vehicle {
     private String make;
     private String model;
 
+    public Car(Builder builder) {
+        super(builder);
+        this.make = builder.make;
+        this.model = builder.model;
+    }
+
     public String getMake() {
         return make;
     }
 
     public String getModel() {
         return model;
-    }
-
-    public Car(Builder builder) {
-        super(builder);
-        this.make = builder.make;
-        this.model = builder.model;
     }
 
     public static class Builder<T extends Builder<T>> extends Vehicle.Builder<T> {

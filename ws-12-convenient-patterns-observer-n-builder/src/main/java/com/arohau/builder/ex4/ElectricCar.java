@@ -3,13 +3,13 @@ package com.arohau.builder.ex4;
 public class ElectricCar extends Car {
     private String batteryType;
 
-    public String getBatteryType() {
-        return batteryType;
-    }
-
     public ElectricCar(Builder builder) {
         super(builder);
         this.batteryType = builder.batteryType;
+    }
+
+    public String getBatteryType() {
+        return batteryType;
     }
 
     public static class Builder<T extends Builder<T>> extends Car.Builder<T> {

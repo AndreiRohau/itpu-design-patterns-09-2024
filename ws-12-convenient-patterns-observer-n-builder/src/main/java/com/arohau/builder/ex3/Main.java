@@ -7,5 +7,7 @@ public class Main {
                 .make("Ford")
                 .model("F")
                 .build();
+
+        System.out.println(car);
     }
 }

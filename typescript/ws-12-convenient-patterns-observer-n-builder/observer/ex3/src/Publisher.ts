@@ -1,6 +1,7 @@
-export class Observer {
+export class Publisher {
+    subscribers: any[]
+
     state
-    subscribers
 
     constructor(state) {
         this.state = state;
@@ -10,7 +11,6 @@ export class Observer {
     get() {
         return this.state;
     }
-
     set(state) {
         this.state = state;
         this.broadcast(state);
@@ -19,7 +19,6 @@ export class Observer {
     subscribeMany(fnArray = []) {
         return fnArray.map(fn => this.subscribe(fn));
     }
-
     subscribe(fn) {
         if (Array.isArray(fn)) {
             return this.subscribeMany(fn);
@@ -30,7 +29,6 @@ export class Observer {
                 subscriber => subscriber !== fn
                 ));
     }
-
     broadcast(data) {
         this.subscribers.forEach(subscriber => subscriber(data));
         return data;

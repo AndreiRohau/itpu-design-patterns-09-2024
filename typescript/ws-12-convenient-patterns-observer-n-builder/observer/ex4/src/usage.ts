@@ -16,4 +16,9 @@ library.attach(player3)
 library.addMedia("video.mp4")
 library.addMedia("audio.mp3")
 
+// detached players
 library.detach(player3)
+library.detach(player2)
+
+console.log('--------')
+library.addMedia("audiobook.mp3")

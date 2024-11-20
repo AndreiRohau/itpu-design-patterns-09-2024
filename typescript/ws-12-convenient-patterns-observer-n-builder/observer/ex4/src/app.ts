@@ -22,6 +22,11 @@ export class MediaLibrary extends Subject  {
     observers: Observer[] = []
     mediaFiles: string[] = []
 
+    addMedia(media: string) {
+        this.mediaFiles.push(media)
+        this.notify()
+    }
+
     attach(observer: Observer) {
         console.log('Subject: Attached an observer.')
         this.observers.push(observer)
@@ -33,10 +38,6 @@ export class MediaLibrary extends Subject  {
         }
         this.observers.splice(index, 1);
         console.log('Subject: Detached  observer.')
-    }
-    addMedia(media: string) {
-        this.mediaFiles.push(media)
-        this.notify()
     }
     notify(): void {
         this.observers.forEach(observer => observer.update(this.mediaFiles))

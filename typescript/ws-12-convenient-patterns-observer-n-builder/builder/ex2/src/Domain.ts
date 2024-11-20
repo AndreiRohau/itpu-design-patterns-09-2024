@@ -12,7 +12,6 @@ export class Car {
     set seats(seats) {
         this._seats = seats
     }
-
     set engine(engine) {
         this._engine = engine
     }
@@ -29,12 +28,10 @@ export class CarBuilder implements Builder {
         this._car.seats = seats
         return this
     }
-
     public setEngine(engine: string): this {
         this._car.engine = engine
         return this
     }
-
     public getResult(): Car {
         return this._car
     }
@@ -49,7 +46,6 @@ export class Motorcycle {
     set seats(seats) {
         this._seats = seats
     }
-
     set engine(engine) {
         this._engine = engine
     }
@@ -66,12 +62,10 @@ export class MotorcycleBuilder implements Builder {
         this.motorcycle.seats = seats
         return this
     }
-
     public setEngine(engine: string): this {
         this.motorcycle.engine = engine
         return this
     }
-
     public getResult(): Motorcycle {
         return this.motorcycle
     }

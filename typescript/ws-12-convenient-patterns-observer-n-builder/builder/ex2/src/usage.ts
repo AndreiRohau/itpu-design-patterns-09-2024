@@ -2,6 +2,8 @@ console.log("works")
 
 import {CarBuilder} from './Domain'
 import {MotorcycleBuilder} from './Domain'
+import {Car} from './Domain'
+import {Motorcycle} from './Domain'
 import {Director} from './Director'
 
 // test
@@ -23,10 +25,10 @@ console.log('----------------------------')
 
 const director = new Director();
 
-let car1 = director.buildFerrari();
-let car2 = director.buildToyota();
-let car3 = director.buildHonda();
-let car4 = director.buildYamaha();
+let car1: Car = director.buildFerrari();
+let car2: Car = director.buildToyota();
+let car3: Motorcycle = director.buildHonda();
+let car4: Motorcycle = director.buildYamaha();
 
 console.log(car1)
 console.log(car2)

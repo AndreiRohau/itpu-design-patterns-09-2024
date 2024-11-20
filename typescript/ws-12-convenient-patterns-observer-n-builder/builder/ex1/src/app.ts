@@ -41,20 +41,20 @@ class BurgerBuilder {
     constructor(name: string) {
         this.name = name
     }
-    addCheese(): BurgerBuilder {
-        this.cheese = true
+    addCheese(has: boolean): BurgerBuilder {
+        this.cheese = has
         return this
     }
-    addBacon(): BurgerBuilder {
-        this.bacon = true
+    addBacon(has: boolean): BurgerBuilder {
+        this.bacon = has
         return this
     }
-    addLettuce(): BurgerBuilder {
-        this.lettuce = true
+    addLettuce(has: boolean): BurgerBuilder {
+        this.lettuce = has
         return this
     }
-    addTomato(): BurgerBuilder {
-        this.tomato = true
+    addTomato(has: boolean): BurgerBuilder {
+        this.tomato = has
         return this
     }
     build(): Burger {
@@ -65,12 +65,19 @@ class BurgerBuilder {
 // Usage
 
 export function builderClient() {
-    const everythingBurgerBuilder = new BurgerBuilder("Everything")
-    const everythingBurger = everythingBurgerBuilder.addCheese().addBacon().addLettuce().addTomato().build()
-    
-    console.log(everythingBurger.showDetails()) 
-    const cheeseBurgerBuilder = new BurgerBuilder("Cheese")
-    const cheeseBurger = cheeseBurgerBuilder.addCheese().addTomato().build() 
+    const everythingBurger: Burger = new BurgerBuilder("Everything")
+        .addCheese(true)
+        .addBacon(true)
+        .addLettuce(true)
+        .addTomato(true)
+        .build()
+    console.log(everythingBurger.showDetails())
+
+    const cheeseBurger: Burger = new BurgerBuilder("Cheese")
+        .addBacon(false)
+        .addCheese(true)
+        .addTomato(true)
+        .build()
     console.log(cheeseBurger.showDetails())
 }
 

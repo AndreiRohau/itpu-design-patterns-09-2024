@@ -23,7 +23,7 @@
   echo "--------" &
   echo &
   echo tsconfig.json &
-  echo "lines: 14 - target - ES2022 | 29 - rootDir - ./src | 60/61 - outDir - ./build" &
+  echo "lines: 14 - target - ES2022 | 29 - rootDir - ./src | 60 - outDir - ./build" &
   echo "--------" &
   echo &
   ```
@@ -36,7 +36,7 @@
     ```
 2. **tsconfig.json** change value accordingly 
 
-    lines: 14 - target | 29 - rootDir | outDir - 60/61
+    lines: 14 - target | 29 - rootDir | outDir - 60
 
    -
         ```
@@ -78,7 +78,7 @@ ___
 - tsconfig.json --->>> uncomment lines and change its values in accordance
   - "target": "ES2022", (line 14)
   - "rootDir": "src", (line 29)
-  - "outDir": "build", (line 60/61)
+  - "outDir": "build", (line 60)
   
 
 - npx tsc

@@ -18,6 +18,13 @@ interface Shape {
 
 // Concrete Elements
 class Circle implements Shape {
+    private double radiusOfCircle;
+    public Circle(double radiusOfCircle) {
+        this.radiusOfCircle = radiusOfCircle;
+    }
+    public double getRadiusOfCircle() {
+        return radiusOfCircle;
+    }
     @Override
     public void accept(ShapeVisitor visitor) {
         visitor.visit(this);
@@ -25,6 +32,13 @@ class Circle implements Shape {
 }
 
 class Square implements Shape {
+    private double sideOfSquare;
+    public Square(double sideOfSquare) {
+        this.sideOfSquare = sideOfSquare;
+    }
+    public double getSideOfSquare() {
+        return sideOfSquare;
+    }
     @Override
     public void accept(ShapeVisitor visitor) {
         visitor.visit(this);
@@ -32,6 +46,18 @@ class Square implements Shape {
 }
 
 class Triangle implements Shape {
+    private double baseOfTriangle;
+    private double heightOfTriangle;
+    public Triangle(double baseOfTriangle, double heightOfTriangle) {
+        this.baseOfTriangle = baseOfTriangle;
+        this.heightOfTriangle = heightOfTriangle;
+    }
+    public double getBaseOfTriangle() {
+        return baseOfTriangle;
+    }
+    public double getHeightOfTriangle() {
+        return heightOfTriangle;
+    }
     @Override
     public void accept(ShapeVisitor visitor) {
         visitor.visit(this);
@@ -41,27 +67,29 @@ class Triangle implements Shape {
 // Concrete Visitors
 class AreaCalculator implements ShapeVisitor {
     private double totalArea = 0;
-    double radiusOfCircle = 5;
-    double sideOfSquare = 4;
-    double baseOfTriangle = 3;
-    double heightOfTriangle = 6;
+
+    public void processShapes(List<Shape> shapes) {
+        for (Shape shape : shapes) {
+            shape.accept(this);
+        }
+    }
 
     @Override
     public void visit(Circle circle) {
         // Calculate area of circle and update totalArea
-        totalArea += Math.PI * Math.pow(radiusOfCircle, 2);
+        totalArea += Math.PI * Math.pow(circle.getRadiusOfCircle(), 2);
     }
 
     @Override
     public void visit(Square square) {
         // Calculate area of square and update totalArea
-        totalArea += Math.pow(sideOfSquare, 2);
+        totalArea += Math.pow(square.getSideOfSquare(), 2);
     }
 
     @Override
     public void visit(Triangle triangle) {
         // Calculate area of triangle and update totalArea
-        totalArea += (baseOfTriangle * heightOfTriangle) / 2;
+        totalArea += (triangle.getBaseOfTriangle() * triangle.getHeightOfTriangle()) / 2;
     }
 
     public double getTotalArea() {
@@ -76,18 +104,15 @@ public class Main {
 
     public static void main(String[] args) {
         List<Shape> shapes = new ArrayList<>();
-        shapes.add(new Circle());
-        shapes.add(new Square());
-        shapes.add(new Triangle());
+        shapes.add(new Circle(5));
+        shapes.add(new Square(4));
+        shapes.add(new Triangle(3, 6));
 
         AreaCalculator areaCalculator = new AreaCalculator();
-        for (Shape shape : shapes) {
-            shape.accept(areaCalculator);
-        }
+        areaCalculator.processShapes(shapes);
 
         double totalArea = areaCalculator.getTotalArea();
         System.out.println(EXPECTED == totalArea);
         System.out.println("Total area: " + totalArea);
-        JavaCompiler systemJavaCompiler = ToolProvider.getSystemJavaCompiler();
     }
 }

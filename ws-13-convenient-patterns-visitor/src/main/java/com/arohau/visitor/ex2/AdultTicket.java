@@ -2,7 +2,11 @@ package com.arohau.visitor.ex2;
 
 public class AdultTicket implements TicketElement {
 
-    private int price = 10;
+    private int price;
+
+    public AdultTicket(int price) {
+        this.price = price;
+    }
 
     @Override
     public int getPrice() {

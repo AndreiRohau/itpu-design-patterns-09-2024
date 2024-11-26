@@ -11,7 +11,7 @@ public class CalculateSizeVisitor implements Visitor {
 
     @Override
     public void visit(Directory directory) {
-        directory.getElements().forEach(e -> e.accept(this));
+        directory.getElements().forEach(e -> e.accept(this)); // vitor.visit(this)
     }
 
     public int getTotalSize() {

@@ -12,7 +12,6 @@ public class Directory implements FileSystemElement {
         this.name = name;
     }
 
-    @Override
     public String getName() {
         return name;
     }

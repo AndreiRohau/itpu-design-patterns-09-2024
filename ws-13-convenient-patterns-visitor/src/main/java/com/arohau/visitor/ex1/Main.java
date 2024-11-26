@@ -3,11 +3,11 @@ package com.arohau.visitor.ex1;
 public class Main {
     public static void main(String[] args) {
         Directory directory1 = new Directory("Directory1");
-        File file1 = new File("file1.txt", 100);
+        File file1 = new File("file1.txt", 103);
         directory1.addElement(file1);
 
         Directory directory2 = new Directory("Directory2");
-        File file2 = new File("file2.txt", 200);
+        File file2 = new File("file2.txt", 204);
         directory2.addElement(file2);
 
         directory1.addElement(directory2);
@@ -18,3 +18,10 @@ public class Main {
         System.out.println("Total size: " + visitor.getTotalSize());
     }
 }
+/*
+     Directory1
+     |        \
+Directory2    file1.txt
+  |
+file2.txt
+ */

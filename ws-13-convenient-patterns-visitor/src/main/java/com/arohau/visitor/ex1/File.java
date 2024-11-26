@@ -10,7 +10,6 @@ public class File implements FileSystemElement {
         this.size = size;
     }
 
-    @Override
     public String getName() {
         return name;
     }

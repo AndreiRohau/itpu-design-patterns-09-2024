@@ -2,37 +2,37 @@ console.log("works")
 
 // Visitor Interface
 class ShapeVisitor {
-    visitCircle(circle) {
+    public visitCircle(circle: Circle): number {
         return 0
     }
-    visitSquare(square) {
+    public visitSquare(square: Square): number {
         return 0
     }
-    visitTriangle(triangle) {
+    public visitTriangle(triangle: Triangle): number {
         return 0
     }
-    visitCompoundShape(triangle) {
+    public visitCompoundShape(compoundShape: CompoundShape): number {
         return 0
     }
 }
 
 // Concrete Visitors
 class AreaCalculator extends ShapeVisitor {
-    visitCircle(circle) {
+    public visitCircle(circle: Circle): number {
         console.log(`Visiting ${circle.constructor.name} with AreaCalculator`)
         return Math.PI * Math.pow(circle.radius, 2)
     }
-    visitSquare(square) {
+    public visitSquare(square: Square): number {
         console.log(`Visiting ${square.constructor.name} with AreaCalculator`)
         return Math.pow(square.side, 2)
     }
-    visitTriangle(triangle) {
+    public visitTriangle(triangle: Triangle): number {
         console.log(`Visiting ${triangle.constructor.name} with AreaCalculator`)
         // Assuming Heron's formula for triangle area calculation
-        const s = (triangle.sideA + triangle.sideB + triangle.sideC) / 2;
+        const s = (triangle.sideA + triangle.sideB + triangle.sideC) / 2
         return Math.sqrt(s * (s - triangle.sideA) * (s - triangle.sideB) * (s - triangle.sideC))
     }
-    visitCompoundShape(compoundShape: CompoundShape) {
+    public visitCompoundShape(compoundShape: CompoundShape): number {
         console.log(`Visiting ${compoundShape.constructor.name} with AreaCalculator`)
         let result = 0
         for (const shape of compoundShape.shapes) {
@@ -43,19 +43,19 @@ class AreaCalculator extends ShapeVisitor {
 }
 
 class PerimeterCalculator extends ShapeVisitor {
-    visitCircle(circle) {
+    public visitCircle(circle: Circle): number {
         console.log(`Visiting ${circle.constructor.name} with AreaCalculator`)
         return 2 * Math.PI * circle.radius
     }
-    visitSquare(square) {
+    public visitSquare(square: Square): number {
         console.log(`Visiting ${square.constructor.name} with AreaCalculator`)
         return 4 * square.side
     }
-    visitTriangle(triangle) {
+    public visitTriangle(triangle: Triangle): number {
         console.log(`Visiting ${triangle.constructor.name} with AreaCalculator`)
         return triangle.sideA + triangle.sideB + triangle.sideC
     }
-    visitCompoundShape(compoundShape: CompoundShape) {
+    public visitCompoundShape(compoundShape: CompoundShape): number {
         console.log(`Visiting ${compoundShape.constructor.name} with PerimeterCalculator`)
         let result = 0
         for (const shape of compoundShape.shapes) {
@@ -68,56 +68,71 @@ class PerimeterCalculator extends ShapeVisitor {
 
 // Visitable Elements
 interface ElementShape {
-    accept(visitor)
+    accept(visitor): number
 }
 
 class Circle implements ElementShape {
-    radius
-    constructor(radius) {
-        this.radius = radius
+    private _radius: number
+    public constructor(radius) {
+        this._radius = radius
+    }
+    public get radius(): number {
+        return this._radius
     }
 
-    accept(visitor) {
+    public accept(visitor): number {
         return visitor.visitCircle(this)
     }
 }
 
 class Square implements ElementShape {
-    side
-    constructor(side) {
-        this.side = side
+    private _side: number
+    public constructor(side) {
+        this._side = side
+    }
+    public get side(): number {
+        return this._side
     }
 
-    accept(visitor) {
+    public accept(visitor): number {
         return visitor.visitSquare(this)
     }
 }
 
 class Triangle implements ElementShape {
-    sideA
-    sideB
-    sideC
-    constructor(sideA, sideB, sideC) {
-        this.sideA = sideA
-        this.sideB = sideB
-        this.sideC = sideC
+    private _sideA: number
+    private _sideB: number
+    private _sideC: number
+    public constructor(sideA, sideB, sideC) {
+        this._sideA = sideA
+        this._sideB = sideB
+        this._sideC = sideC
+    }
+    public get sideA(): number {
+        return this._sideA
+    }
+    public get sideB(): number {
+        return this._sideB
+    }
+    public get sideC(): number {
+        return this._sideC
     }
 
-    accept(visitor) {
+    public accept(visitor): number {
         return visitor.visitTriangle(this)
     }
 }
 
 class CompoundShape implements ElementShape {
     private _shapes: ElementShape[] = []
-    get shapes() {
+    public get shapes(): ElementShape[] {
         return this._shapes
     }
-    add(shape: ElementShape) {
+    public add(shape: ElementShape): void {
         this._shapes.push(shape)
     }
 
-    accept(visitor: ShapeVisitor) {
+    public accept(visitor: ShapeVisitor): number {
         return visitor.visitCompoundShape(this)
     }
 }

@@ -2,10 +2,18 @@ console.log("works")
 
 // Visitor Interface
 class ShapeVisitor {
-    visitCircle(circle) {}
-    visitSquare(square) {}
-    visitTriangle(triangle) {}
-    visitCompoundShape(triangle) {}
+    visitCircle(circle) {
+        return 0
+    }
+    visitSquare(square) {
+        return 0
+    }
+    visitTriangle(triangle) {
+        return 0
+    }
+    visitCompoundShape(triangle) {
+        return 0
+    }
 }
 
 // Concrete Visitors
@@ -105,11 +113,11 @@ class CompoundShape implements ElementShape {
     get shapes() {
         return this._shapes
     }
-    add(shape: ElementShape): void {
+    add(shape: ElementShape) {
         this._shapes.push(shape)
     }
 
-    accept(visitor: ShapeVisitor): void {
+    accept(visitor: ShapeVisitor) {
         return visitor.visitCompoundShape(this)
     }
 }

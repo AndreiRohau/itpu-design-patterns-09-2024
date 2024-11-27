@@ -46,6 +46,8 @@ class Motorbike implements Vehicle {
     }
 }
 
+// check the code
+
 let car = new Car();
 let van = new Van();
 let motorbike = new Motorbike();

@@ -62,7 +62,6 @@ class VehicleOwner {
 }
 
 // check it:
-
 const owner = new VehicleOwner();
 owner.add(new Car())
 owner.add(new Van())

@@ -68,33 +68,33 @@ class PerimeterCalculator extends ShapeVisitor {
 
 // Visitable Elements
 interface ElementShape {
-    accept(visitor): number
+    accept(visitor: ShapeVisitor): number
 }
 
 class Circle implements ElementShape {
     private _radius: number
-    public constructor(radius) {
+    public constructor(radius: number) {
         this._radius = radius
     }
     public get radius(): number {
         return this._radius
     }
 
-    public accept(visitor): number {
+    public accept(visitor: ShapeVisitor): number {
         return visitor.visitCircle(this)
     }
 }
 
 class Square implements ElementShape {
     private _side: number
-    public constructor(side) {
+    public constructor(side: number) {
         this._side = side
     }
     public get side(): number {
         return this._side
     }
 
-    public accept(visitor): number {
+    public accept(visitor: ShapeVisitor): number {
         return visitor.visitSquare(this)
     }
 }
@@ -103,7 +103,7 @@ class Triangle implements ElementShape {
     private _sideA: number
     private _sideB: number
     private _sideC: number
-    public constructor(sideA, sideB, sideC) {
+    public constructor(sideA: number, sideB: number, sideC: number) {
         this._sideA = sideA
         this._sideB = sideB
         this._sideC = sideC
@@ -118,7 +118,7 @@ class Triangle implements ElementShape {
         return this._sideC
     }
 
-    public accept(visitor): number {
+    public accept(visitor: ShapeVisitor): number {
         return visitor.visitTriangle(this)
     }
 }

@@ -56,6 +56,8 @@ class Triangle {
   }
 }
 
+// code checking
+
 const areaCalculator = new AreaCalculator();
 const perimeterCalculator = new PerimeterCalculator();
 

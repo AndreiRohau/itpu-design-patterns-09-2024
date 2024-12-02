@@ -1,5 +1,12 @@
 package com.arohau.proxy.ex1;
 
+/*
+    proxy
+
+    - check access
+    - add lazy load for the service
+
+ */
 public class MusicPlayer {
 
     private static final RecommendationsProxy recommendationsProxy = new RecommendationsProxy();

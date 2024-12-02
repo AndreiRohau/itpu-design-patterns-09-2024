@@ -1,5 +1,11 @@
 package com.arohau.proxy.ex2;
 
+/*
+    proxy
+
+    - add lazy load for the data
+
+ */
 public class App {
 
     private static final MediaPlayerProxy movieMediaPlayer = new MediaPlayerProxy();

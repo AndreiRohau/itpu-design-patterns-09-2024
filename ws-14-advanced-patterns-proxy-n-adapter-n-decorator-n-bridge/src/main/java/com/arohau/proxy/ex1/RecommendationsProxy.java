@@ -6,7 +6,6 @@ public class RecommendationsProxy implements Recommendations {
 
     @Override
     public void showRecommendations(User user) {
-
         if (user.isPremium()) {
             if (recommendations == null) {
                 recommendations = new SongRecommendations(user);

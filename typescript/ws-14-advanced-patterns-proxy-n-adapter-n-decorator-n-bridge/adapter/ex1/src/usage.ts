@@ -32,6 +32,7 @@ class MSTeamsAdapter implements IMessageClient {
   }
 }
 
+// checking starts
 const slackClient: SlackClient = new SlackClient()
 const slackAdapter: IMessageClient = new SlackAdapter(slackClient)
 

@@ -24,6 +24,29 @@ class FileDataSource implements DataSource {
   }
 }
 
+// my example of the decorator
+class MyEncryptionDecorator implements DataSource {
+  protected source: DataSource;
+
+  constructor(source: DataSource) {
+    this.source = source;
+  }
+
+  writeData(data: string): void {
+    const base64Data = btoa(data);
+    console.log(`[My EncryptionDecorator] Encrypted data: ${base64Data}`);
+    this.source.writeData(base64Data);
+  }
+
+  readData(): string {
+    const base64Data = this.source.readData();
+    const data = atob(base64Data);
+    console.log(`[My EncryptionDecorator] Decrypted data: ${data}`);
+    return data;
+  }
+}
+
+// abstract example
 class DataSourceDecorator implements DataSource {
   protected source: DataSource;
 
@@ -40,6 +63,7 @@ class DataSourceDecorator implements DataSource {
   }
 }
 
+// examples from materials
 class EncryptionDecorator extends DataSourceDecorator {
   writeData(data: string): void {
     const base64Data = btoa(data);
@@ -55,6 +79,7 @@ class EncryptionDecorator extends DataSourceDecorator {
   }
 }
 
+// examples from materials
 class ReverseDecorator extends DataSourceDecorator {
   writeData(data: string): void {
     const compressedData = data.split("").reverse().join("");
@@ -70,11 +95,19 @@ class ReverseDecorator extends DataSourceDecorator {
   }
 }
 
+// check the code
 const file = new FileDataSource("file.txt");
 const encryptedFile = new EncryptionDecorator(file);
 
 encryptedFile.writeData("Hello world!");
 encryptedFile.readData();
+
+console.log('--------')
+// my encryption test
+const myEncrptedFile1 = new MyEncryptionDecorator(file)
+const myEncrptedFile2 = new MyEncryptionDecorator(myEncrptedFile1)
+myEncrptedFile2.writeData("Hello world!");
+myEncrptedFile2.readData();
 
 /* Output:
 

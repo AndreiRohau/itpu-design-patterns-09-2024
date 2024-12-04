@@ -109,6 +109,18 @@ function run(): void {
     mouse.click();
     mouse.move();
     mouse.wheel();
+
+    console.log('--------')
+
+    const hand2 = new Gestures(audioV2);
+    const mouse2 = new Mouse(screenV2);
+    hand2.tap();
+    hand2.swipe();
+    hand2.pinch();
+
+    mouse2.click();
+    mouse2.move();
+    mouse2.wheel();
 }
 
 run();

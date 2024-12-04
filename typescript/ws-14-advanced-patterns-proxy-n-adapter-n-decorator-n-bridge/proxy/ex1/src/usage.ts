@@ -18,7 +18,7 @@ const personProxy = new Proxy(person, {
   }
 });
 
-let result = personProxy.name
+let result = personProxy.name // proxy.getName()
 console.log('name = ', result)
 console.log('----')
 

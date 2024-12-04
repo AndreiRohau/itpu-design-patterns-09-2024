@@ -10,7 +10,7 @@ public class MilkDecorator implements Coffee {
 
     @Override
     public double cost() {
-        double milkCost = 0.5;
+        double milkCost = 0.4;
         double originalCost = coffee.cost();
         double decoratedResult = originalCost + milkCost;
         return decoratedResult;
@@ -18,7 +18,7 @@ public class MilkDecorator implements Coffee {
 
     @Override
     public String getDescription() {
-        String mildDescription = ", Milk";
+        String mildDescription = "with Milk";
         String originalDescription = coffee.getDescription();
         String decoratedResult = originalDescription + mildDescription;
         return decoratedResult;

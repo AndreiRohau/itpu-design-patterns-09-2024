@@ -12,6 +12,6 @@ public class WhippedCreamDecorator implements Coffee {
     }
 
     public String getDescription() {
-        return coffee.getDescription() + ", Whipped Cream";
+        return coffee.getDescription() + ", with Whipped Cream";
     }
 }

@@ -1,7 +1,6 @@
 package com.arohau.bridge.ex2;
 
 public class App {
-
     public static void main(String[] args) {
         var circle = new Circle(new Red());
         circle.getType();
@@ -11,5 +10,4 @@ public class App {
         square.getType();
         square.getColor().get();
     }
-
 }

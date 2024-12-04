@@ -6,7 +6,7 @@ public class DuckSimulator {
         Duck duck = new MallardDuck();
         testDuck(duck);
 
-        //Test a turkey
+        // Test a turkey
         Turkey turkey = new WildTurkey();
         Duck turkeyAdapter = new TurkeyAdapter(turkey);
         testDuck(turkeyAdapter);

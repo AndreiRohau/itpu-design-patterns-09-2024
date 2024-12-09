@@ -1,15 +1,12 @@
 package com.arohau.chainOfResponsibility.ex0;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Builder
 public class JiraStory {
+    private long id;
     private JiraStoryType type;
     private String title;
     private String storyDescription;
@@ -21,6 +18,7 @@ public class JiraStory {
         BACKEND,
         DEVOPS,
         TESTER,
-        BUSINESS_ANALYST
+        BUSINESS_ANALYST,
+        NO_TYPE
     }
 }

@@ -23,6 +23,8 @@ public class TeamLeader extends TeamMember {
             }
         } else if (nextTeamMember != null) {
             nextTeamMember.workOnStory(jiraStory);
+        } else {
+            defaultAction(jiraStory);
         }
     }
 }

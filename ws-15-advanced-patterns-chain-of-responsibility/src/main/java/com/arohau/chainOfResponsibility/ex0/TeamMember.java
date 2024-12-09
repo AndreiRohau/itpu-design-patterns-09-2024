@@ -9,4 +9,9 @@ public abstract class TeamMember {
     }
 
     public abstract void workOnStory(JiraStory jiraStory);
+
+    public void defaultAction(JiraStory jiraStory) {
+        System.out.println("Default action happened. " +
+                "No options: need to set another JiraStoryType for your story with id=" + jiraStory.getId());
+    }
 }

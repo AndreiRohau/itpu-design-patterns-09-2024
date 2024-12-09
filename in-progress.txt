@@ -10,3 +10,4 @@ https://www.linkedin.com/learning/complete-guide-to-java-design-patterns-creatio
 
 https://www.linkedin.com/learning/typescript-design-patterns/implement-an-facade-pattern
 
+https://www.linkedin.com/learning/complete-guide-to-java-design-patterns-creational-behavioral-and-structural/understand-the-interpreter-pattern?resume=false&u=2113185

@@ -14,6 +14,4 @@ public class ConsoleLogger extends Logger {
             nextLogger.log(request);
         }
     }
-
-
 }

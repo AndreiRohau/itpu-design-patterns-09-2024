@@ -5,6 +5,7 @@ import com.arohau.chainOfResponsibility.ex0.TeamMember;
 
 import java.util.List;
 
+// Concrete handlers
 public class Tester extends TeamMember {
 
     private final List<JiraStory.JiraStoryType> managedStoryTypes = List.of(JiraStory.JiraStoryType.TESTER);

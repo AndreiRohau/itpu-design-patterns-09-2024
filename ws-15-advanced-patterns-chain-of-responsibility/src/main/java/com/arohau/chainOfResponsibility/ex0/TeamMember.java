@@ -1,5 +1,6 @@
 package com.arohau.chainOfResponsibility.ex0;
 
+// Handler Interface
 public abstract class TeamMember {
 
     public TeamMember nextTeamMember;

@@ -1,6 +1,7 @@
 package com.arohau.bridge.ex1;
 
 public class Shirt implements ClothingItem {
+    private final String type = "Shirt";
     private final Size size;
 
     public Shirt(Size size) {
@@ -9,7 +10,7 @@ public class Shirt implements ClothingItem {
 
     @Override
     public void getType() {
-        System.out.println("Shirt");
+        System.out.println(type);
     }
 
     @Override

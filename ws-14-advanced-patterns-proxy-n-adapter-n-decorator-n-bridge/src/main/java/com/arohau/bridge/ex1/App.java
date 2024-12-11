@@ -6,6 +6,9 @@ public class App {
         hoodie.getType();
         hoodie.getSize().get();
 
+
+        var hoodie2 = new Hoodie(new AdultSize());
+
         var shirt = new Shirt(new AdultSize());
         shirt.getType();
         shirt.getSize().get();

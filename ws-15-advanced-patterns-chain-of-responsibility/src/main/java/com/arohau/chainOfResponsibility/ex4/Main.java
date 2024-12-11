@@ -9,11 +9,11 @@ interface SupportHandler {
 // Concrete Handlers
 class Level1SupportHandler implements SupportHandler {
     private SupportHandler nextHandler;
-
+    @Override
     public void setNextHandler(SupportHandler nextHandler) {
         this.nextHandler = nextHandler;
     }
-
+    @Override
     public void handleRequest(Request request) {
         if (request.getPriority() == Priority.BASIC) {
             System.out.println("Level 1 Support handled the request with [" + request.getPriority() + "] priority.");
@@ -25,11 +25,11 @@ class Level1SupportHandler implements SupportHandler {
 
 class Level2SupportHandler implements SupportHandler {
     private SupportHandler nextHandler;
-
+    @Override
     public void setNextHandler(SupportHandler nextHandler) {
         this.nextHandler = nextHandler;
     }
-
+    @Override
     public void handleRequest(Request request) {
         if (request.getPriority() == Priority.INTERMEDIATE) {
             System.out.println("Level 2 Support handled the request with [" + request.getPriority() + "] priority.");
@@ -40,16 +40,17 @@ class Level2SupportHandler implements SupportHandler {
 }
 
 class Level3SupportHandler implements SupportHandler {
+    @Override
+    public void setNextHandler(SupportHandler nextHandler) {
+        // No next handler for Level 3
+    }
+    @Override
     public void handleRequest(Request request) {
         if (request.getPriority() == Priority.CRITICAL) {
             System.out.println("Level 3 Support handled the request with [" + request.getPriority() + "] priority.");
         } else {
             System.out.println("Request cannot be handled.");
         }
-    }
-
-    public void setNextHandler(SupportHandler nextHandler) {
-        // No next handler for Level 3
     }
 }
 
@@ -84,9 +85,11 @@ public class Main {
         Request request1 = new Request(Priority.BASIC);
         Request request2 = new Request(Priority.INTERMEDIATE);
         Request request3 = new Request(Priority.CRITICAL);
+        Request request4 = new Request(null);
 
         level1Handler.handleRequest(request1);
         level1Handler.handleRequest(request2);
         level1Handler.handleRequest(request3);
+        level1Handler.handleRequest(request4);
     }
 }

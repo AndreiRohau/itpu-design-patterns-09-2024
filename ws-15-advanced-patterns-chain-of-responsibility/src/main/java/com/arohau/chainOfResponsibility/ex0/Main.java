@@ -36,11 +36,12 @@ public class Main {
     }
 
     private static TeamLeader initTeam() {
-        return new TeamLeader(
-                new BackendDeveloper(
-                        new BusinessAnalyst(
-                                new DevelopmentOperations(
-                                        new FrontendDeveloper(
-                                                new Tester(null))))));
+        Tester tester = new Tester(null);
+        FrontendDeveloper frontendDeveloper = new FrontendDeveloper(tester);
+        DevelopmentOperations developmentOperations = new DevelopmentOperations(frontendDeveloper);
+        BusinessAnalyst businessAnalyst = new BusinessAnalyst(developmentOperations);
+        BackendDeveloper backendDeveloper = new BackendDeveloper(businessAnalyst);
+        TeamLeader teamLeader = new TeamLeader(backendDeveloper);
+        return teamLeader;
     }
 }

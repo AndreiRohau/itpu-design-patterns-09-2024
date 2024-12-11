@@ -116,12 +116,13 @@ class DiscountCalculatorV2 {
   public addLast(discountHandler: DiscountHandler) {
       this.discountHandlers.push(discountHandler)
   }
-
 }
 
 // electronics==10% books==15% clothing==20% toys==0%
 const calculator = new DiscountCalculator();
 const calculator2 = new DiscountCalculatorV2(); // summarizing discounts
+
+console.log(calculator.calculateDiscount(['lol'], 100)); // Output: 100
 
 console.log(calculator.calculateDiscount(['Electronics', 'Clothing'], 100)); // Output: 90
 console.log(calculator.calculateDiscount(['Books'], 100)); // Output: 85

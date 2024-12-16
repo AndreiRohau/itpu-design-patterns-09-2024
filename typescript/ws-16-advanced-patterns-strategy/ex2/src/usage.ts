@@ -1,4 +1,5 @@
 console.log("works")
+console.log("Imperative impl")
 
 // [STRATEGY]
 abstract class SoundStrategy {

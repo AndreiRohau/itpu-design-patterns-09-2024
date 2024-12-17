@@ -1,11 +1,11 @@
 package com.arohau.strategy.ex4;
 
-// TravelStrategy.java == STRATEGY interface
+// [STRATEGY] interface == TravelStrategy.java
 interface TravelStrategy {
     void travel(String source, String destination);
 }
 
-// CarTravelStrategy.java == CONCRETE STRATEGY
+// [CONCRETE_STRATEGY] == CarTravelStrategy.java
 class CarTravelStrategy implements TravelStrategy {
     @Override
     public void travel(String source, String destination) {
@@ -13,7 +13,7 @@ class CarTravelStrategy implements TravelStrategy {
     }
 }
 
-// BicycleTravelStrategy.java == CONCRETE STRATEGY
+// [CONCRETE_STRATEGY] == BicycleTravelStrategy.java
 class BicycleTravelStrategy implements TravelStrategy {
     @Override
     public void travel(String source, String destination) {
@@ -21,7 +21,7 @@ class BicycleTravelStrategy implements TravelStrategy {
     }
 }
 
-// WalkingTravelStrategy.java == CONCRETE STRATEGY
+// [CONCRETE_STRATEGY] == WalkingTravelStrategy.java
 class WalkingTravelStrategy implements TravelStrategy {
     @Override
     public void travel(String source, String destination) {
@@ -29,7 +29,7 @@ class WalkingTravelStrategy implements TravelStrategy {
     }
 }
 
-// TravelPlanner.java == CONTEXT
+// [CONTEXT] == TravelPlanner.java
 class TravelPlanner {
     private TravelStrategy travelStrategy;
 

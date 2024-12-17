@@ -2,7 +2,7 @@ package com.arohau.strategy.ex1;
 
 import java.util.Scanner;
 
-public class PhotoWithPhone {
+public class Main {
  
 	public static void main(String[] args) {
 		PhoneCameraApp cameraApp = new BasicCameraApp();

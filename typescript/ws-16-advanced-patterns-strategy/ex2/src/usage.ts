@@ -4,7 +4,7 @@ console.log("Imperative impl")
 // [STRATEGY]
 abstract class SoundStrategy {
 	abstract makeSound(): string
- }
+}
 // [CONCRETE_STRATEGY] Cat Sound Strategy
 class CatSoundStrategy extends SoundStrategy {
     public makeSound(): string {
@@ -18,7 +18,7 @@ class DogSoundStrategy extends SoundStrategy {
     }
 }
 
- // [CONTEXT]
+// [CONTEXT]
 class Context {
     private _soundStrategy: SoundStrategy
 

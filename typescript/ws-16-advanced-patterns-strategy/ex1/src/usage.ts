@@ -6,7 +6,7 @@ abstract class Animal  {
 	abstract makeSound() : string
  }
 // Concrete Object 1
-class Cat extends Animal{
+class Cat extends Animal {
     makeSound() : string {
         return "Meow"
     }

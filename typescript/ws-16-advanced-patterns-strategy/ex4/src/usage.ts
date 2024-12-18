@@ -1,10 +1,12 @@
 console.log("works")
 console.log("Declarative implementation")
 
+// [CONTEXT]
 var Shipping = function () {
     this.company = "";
 };
 
+// [CONTEXT]
 Shipping.prototype = {
     setStrategy: function (company) {
         this.company = company;
@@ -15,6 +17,7 @@ Shipping.prototype = {
     }
 };
 
+// [CONCRETE STRATEGY]
 var UPS = function () {
     this.calculate = function (package) {
         // calculations...
@@ -22,6 +25,7 @@ var UPS = function () {
     }
 };
 
+// [CONCRETE STRATEGY]
 var USPS = function () {
     this.calculate = function (package) {
         // calculations...
@@ -29,6 +33,7 @@ var USPS = function () {
     }
 };
 
+// [CONCRETE STRATEGY]
 var Fedex = function () {
     this.calculate = function (package) {
         // calculations...
@@ -36,6 +41,7 @@ var Fedex = function () {
     }
 };
 
+// [CLIENT]
 function run() {
     var package = { from: "76712", to: "10012", weigth: "lkg" };
 
@@ -45,7 +51,7 @@ function run() {
     var usps = new USPS();
     var fedex = new Fedex();
 
-    var shipping = new Shipping();
+    var shipping = new Shipping(); // context
 
     shipping.setStrategy(ups);
     console.log("UPS Strategy: " + shipping.calculate(package));
